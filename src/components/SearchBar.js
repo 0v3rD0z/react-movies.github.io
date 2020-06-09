@@ -6,11 +6,11 @@ export default class SearchBar extends Component {
     this.state = {
       searchText: "",
       intervalBeforeRequest: 1500,
-      lockRequest: false
+      lockRequest: false,
     };
   }
 
-  handleChange = event => {
+  handleChange = (event) => {
     this.setState({ searchText: event.target.value });
     if (!this.state.lockRequest) {
       this.setState({ lockRequest: true });
@@ -20,7 +20,7 @@ export default class SearchBar extends Component {
     }
   };
 
-  handleClick = event => {
+  handleClick = (event) => {
     this.search();
   };
 
@@ -35,8 +35,7 @@ export default class SearchBar extends Component {
         <div className="col-md-8 input-group">
           <input
             className="form-control input-lg"
-            placeholder=
-            "Tapez Votre film"
+            placeholder="Tapez Votre film"
             onChange={this.handleChange.bind(this)}
             type="text"
           />
@@ -48,7 +47,6 @@ export default class SearchBar extends Component {
               GO
             </button>
           </span>
-          <p> {this.state.searchText} </p>
         </div>
       </div>
     );
