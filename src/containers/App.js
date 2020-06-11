@@ -1,10 +1,14 @@
 import React, { Component } from "react";
-import SearchBar from "../components/SearchBar";
-import VideoList from "./VideoList";
+
 import axios from "axios";
-import VideoDetail from "./VideoDetail";
+
+import SearchBar from "../components/SearchBar";
 import Video from "../components/Video";
 import "../style/style.css";
+
+import VideoDetail from "./VideoDetail";
+import VideoList from "./VideoList";
+import Header from "../components/Header";
 
 
 const API_KEY = "api_key=59ea784f19103418c3f715a2a1c54047";
@@ -102,6 +106,7 @@ export default class App extends Component {
     };
     return (
       <div>
+      <Header />
         <div className="search_bar">
           <SearchBar callback={this.onClickSearch.bind(this)} />
         </div>
